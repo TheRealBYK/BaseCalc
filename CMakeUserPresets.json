@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "configurePresets": [
+	{
+	    "name": "unixlike-gcc-debug-user",
+            "displayName": "GCC Debug (User)",
+            "inherits": "unixlike-gcc-debug"
+        }
+    ]
+}
