@@ -1,9 +1,14 @@
-#include "BaseCalc.h"
+// Copyright (c) 2026 BYK. All Rights Reserved.
+//
+// This file is part of BaseCalc.
+//
+// BaseCalc is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, under version 2 of the License.
+//
+// BaseCalc is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License along with BaseCalc. If not, see <https://www.gnu.org/licenses/>.
 
-// void pop_menu(GtkButton *button, gpointer data)
-// {
-//     gtk_popover_popup(GTK_POPOVER (data));
-// }
+#include "BaseCalc.h"
 
 typedef struct {
     GtkWidget *window;
@@ -34,7 +39,6 @@ void convert_dec_2_base_X(GtkButton *button, gpointer data)
 	alert = gtk_alert_dialog_new("Converting from %s base to %s base, pointless.\n", to, from);
 	gtk_alert_dialog_show(GTK_ALERT_DIALOG (alert), GTK_WINDOW (widgetStruct->window));
 	return;
-	// gtk_label_set_label(GTK_LABEL (widgetStruct->output), "Cannot convert from base t");
     }
     else
     {
@@ -194,9 +198,6 @@ void activate (GtkApplication *app, gpointer data)
     gtk_grid_attach(GTK_GRID (grid), popUpSelection1, 1, 4, 2, 1);
     gtk_grid_attach(GTK_GRID (grid), popUpSelection2, 6, 4, 2, 1);
     gtk_grid_attach(GTK_GRID (grid), convertBtn, 3, 6, 1, 1);
-
-    // g_signal_connect(GTK_MENU_BUTTON (popUpSelection1), "activate", G_CALLBACK (pop_menu), popOver1);
-    // g_signal_connect(GTK_MENU_BUTTON (popUpSelection2), "activate", G_CALLBACK (pop_menu), popOver2);
 
     g_signal_connect(GTK_BUTTON (labelOut), "clicked", G_CALLBACK (copy_output), NULL);
 
