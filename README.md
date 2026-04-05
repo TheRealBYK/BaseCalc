@@ -5,7 +5,7 @@ A base calculator made in C with GTK4.
 [Linux](#linux)  
 
 ## Windows
-To install GTK4 on Windows follow the guide [here](https://www.gtk.org/docs/installations/windows), additionally, install CMake and edit the [CMakeUserPresets](https://github.com/TheRealBYK/BaseCalc/CMakeUserPresets.json) to use the compiler you use.
+To install GTK4 on Windows follow the guide [here](https://www.gtk.org/docs/installations/windows), additionally, install CMake and edit the [CMakeUserPresets](https://github.com/TheRealBYK/BaseCalc/blob/master/CMakeUserPresets.json) to use the compiler / environment you use.
 
 ## Linux
 To build this program on Linux make sure you have these three packages installed.
