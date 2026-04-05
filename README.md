@@ -1,8 +1,20 @@
 # BaseCalc
 A base calculator made in C with GTK4.
 
+[Windows](#windows)
+[Linux](#linux)
+
+## Windows
+To install GTK4 on Windows follow the guide [here](https://www.gtk.org/docs/installations/windows), additionally, install CMake and GCC.
+
+## Linux
+To build this program on Linux make sure you have these three packages installed.
+- GTK-4
+- CMake
+- GCC
+
 ## Setup.
-Make a directory called `build`, set the cmake root and build directory, finally, build the program.
+Once you've followed the steps for installing GTK4, GCC and CMake on either Linux or Windows, `cd` into your clone of the repository, make a directory called `build`, set the cmake root and build directory, finally, build the program.
 ```
 mkdir build
 cmake -S . -B build
