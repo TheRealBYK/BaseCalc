@@ -141,6 +141,7 @@ void activate (GtkApplication *app, gpointer data)
     GtkWidget *convertBtn = gtk_button_new_with_label("Convert");
     
     GtkWidget *popUpSelection1 = gtk_menu_button_new();
+    gtk_menu_button_set_always_show_arrow(GTK_MENU_BUTTON (popUpSelection1), TRUE);
     GtkWidget *popOver1 = gtk_popover_new();
     GtkWidget *box1 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 1);
 
@@ -150,6 +151,7 @@ void activate (GtkApplication *app, gpointer data)
     GtkWidget *xBtn1 = gtk_button_new_with_label("Hexadecimal");
 
     GtkWidget *popUpSelection2 = gtk_menu_button_new();
+    gtk_menu_button_set_always_show_arrow(GTK_MENU_BUTTON (popUpSelection2), TRUE);
     GtkWidget *popOver2 = gtk_popover_new();
     GtkWidget *box2 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 1);
 
