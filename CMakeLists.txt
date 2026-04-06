@@ -17,3 +17,4 @@ add_subdirectory("BaseCalc")
 
 install(TARGETS BaseCalc DESTINATION bin)
 install(DIRECTORY "build" DESTINATION lib)
+install(FILES "BaseCalc.svg" DESTINATION share/icons/)

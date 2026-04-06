@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<!-- Copyright (c) 2026 BYK. All Rights Reserved. -->
+<!---->
+<!-- This file is part of BaseCalc. -->
+<!---->
+<!-- BaseCalc is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, under version 2 of the License. -->
+<!---->
+<!-- BaseCalc is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. -->
+<!---->
+<!-- You should have received a copy of the GNU General Public License along with BaseCalc. If not, see <https://www.gnu.org/licenses/>. -->
+
+<svg
+   width="124.5mm"
+   height="124.5mm"
+   viewBox="0 0 124.5 124.5"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="BaseCalc.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1"
+     inkscape:cx="396.5"
+     inkscape:cy="198.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0.82461;fill:#1e2021;fill-opacity:1;stroke:#1e2021;stroke-width:0.1;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect1"
+       width="123.12903"
+       height="122.06451"
+       x="0.70967543"
+       y="1.2388415"
+       ry="36.548386" />
+    <rect
+       style="opacity:0.82461;fill:#767676;fill-opacity:1;stroke:#767676;stroke-width:0.118804;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect2"
+       width="105.01345"
+       height="97.916679"
+       x="10.293543"
+       y="13.751668"
+       ry="45.842808"
+       rx="20.372921" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0456455;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect3"
+       width="16.108728"
+       height="13.161496"
+       x="14.526281"
+       y="41.510944"
+       rx="1.5758566"
+       ry="13.161496" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.107379;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect4"
+       width="10.097521"
+       height="36.47546"
+       x="20.768272"
+       y="48.715199"
+       rx="1.0580347"
+       ry="13.161496" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0624708;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect3-7"
+       width="30.215836"
+       height="13.142851"
+       x="82.815529"
+       y="41.306034"
+       rx="2.9559021"
+       ry="13.142851" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0510516;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect3-7-3"
+       width="20.160324"
+       height="13.154992"
+       x="82.57605"
+       y="59.028847"
+       rx="1.972209"
+       ry="13.154992" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.102583;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect4-3"
+       width="9.5614471"
+       height="35.155972"
+       x="82.628944"
+       y="48.764519"
+       rx="1.001864"
+       ry="12.685383" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0878488;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect5"
+       width="26.018227"
+       height="10.984367"
+       x="33.338615"
+       y="41.269115"
+       rx="0.92454833"
+       ry="10.081092" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0878488;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect5-36"
+       width="26.018227"
+       height="10.984367"
+       x="33.60762"
+       y="74.267349"
+       rx="0.92454833"
+       ry="10.081092" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0878488;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect5-3"
+       width="26.018227"
+       height="10.984367"
+       x="33.833874"
+       y="57.790794"
+       rx="0.92454833"
+       ry="10.081092" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0878488;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect6"
+       width="8.8235722"
+       height="19.103247"
+       x="33.338631"
+       y="46.28373"
+       rx="0.92454833"
+       ry="10.081092" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0878488;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect6-1"
+       width="8.8235722"
+       height="19.103247"
+       x="51.028519"
+       y="61.611443"
+       rx="0.92454833"
+       ry="10.081092" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0788046;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect7-1"
+       width="17.74828"
+       height="5.577445"
+       x="61.9519"
+       y="67.772736"
+       rx="1.0511311"
+       ry="5.577445" />
+    <rect
+       style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0788046;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect7-1-0"
+       width="17.74828"
+       height="5.577445"
+       x="61.687321"
+       y="58.512314"
+       rx="1.0511311"
+       ry="5.577445" />
+  </g>
+</svg>
