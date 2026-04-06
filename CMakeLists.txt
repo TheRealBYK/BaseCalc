@@ -14,3 +14,6 @@ project("BaseCalc")
 
 # Include sub-projects.
 add_subdirectory("BaseCalc")
+
+install(TARGETS BaseCalc DESTINATION bin)
+install(DIRECTORY "build" DESTINATION lib)
