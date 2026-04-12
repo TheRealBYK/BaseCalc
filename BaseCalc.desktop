@@ -8,16 +8,12 @@
 #
 # You should have received a copy of the GNU General Public License along with BaseCalc. If not, see <https://www.gnu.org/licenses/>.
 
-cmake_minimum_required(VERSION 3.8)
-
-project("BaseCalc")
-
-# Include sub-projects.
-add_subdirectory("BaseCalc")
-
-install(TARGETS BaseCalc DESTINATION bin)
-install(DIRECTORY "build" DESTINATION lib)
-install(FILES "BaseCalc.svg" DESTINATION share/icons/)
-install(FILES "LICENSE" DESTINATION share/licenses/basecalc-git/)
-install(FILES "README.md" DESTINATION share/doc/basecalc-git/)
-install(FILES "BaseCalc.desktop" DESTINATION share/applications/)
+[Desktop Entry]
+Type=Application
+Version=1.0.4
+Name=BaseCalc
+Comment=A Base Calculator.
+Exec=BaseCalc
+Icon=/usr/share/icons/BaseCalc.svg
+Terminal=false
+Categories=Utility;Development;
