@@ -7,8 +7,10 @@ A base calculator made in C with GTK4.
 
 ## Arch
 On Arch (and MSYS2) you can install the program directly from the AUR package `basecalc-git`, this will install BaseCalc as a binary file system-wide.  
-[!> [!WARNING]
-> AUR packages are user produced content. Any use of the provided files is at your own risk.]  
+
+> [!WARNING]
+> AUR packages are user produced content. Any use of the provided files is at your own risk.  
+
 `yay -S basecalc-git`  
 
 ## Windows
