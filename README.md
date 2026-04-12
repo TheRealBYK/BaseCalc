@@ -1,15 +1,22 @@
 # BaseCalc
 A base calculator made in C with GTK4.
 
+[Arch](#arch)  
 [Windows](#windows)  
 [Linux](#linux)  
+
+## Arch
+On Arch (and MSYS2) you can install the program directly from the AUR package `basecalc-git`, this will install BaseCalc as a binary file system-wide.  
+[!> [!WARNING]
+> AUR packages are user produced content. Any use of the provided files is at your own risk.]  
+`yay -S basecalc-git`  
 
 ## Windows
 To install GTK4 on Windows follow the guide [here](https://www.gtk.org/docs/installations/windows), additionally, install CMake and edit the [CMakeUserPresets](https://github.com/TheRealBYK/BaseCalc/blob/master/CMakeUserPresets.json) to use the compiler / environment you use.
 
 ## Linux
 To build this program on Linux make sure you have these three packages installed.
-- GTK-4
+- GTK-4 / GTK-4 Development
 - CMake
 - GCC
 
