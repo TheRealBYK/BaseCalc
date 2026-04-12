@@ -11,7 +11,9 @@ On Arch (and MSYS2) you can install the program directly from the AUR package `b
 > [!WARNING]
 > AUR packages are user produced content. Any use of the provided files is at your own risk.  
 
-`yay -S basecalc-git`  
+```
+yay -S basecalc-git
+```  
 
 ## Windows
 To install GTK4 on Windows follow the guide [here](https://www.gtk.org/docs/installations/windows), additionally, install CMake and edit the [CMakeUserPresets](https://github.com/TheRealBYK/BaseCalc/blob/master/CMakeUserPresets.json) to use the compiler / environment you use.
