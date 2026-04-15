@@ -34,7 +34,7 @@ void convert_dec_2_base_X(GtkButton *button, gpointer data)
     const char *str2Convert = gtk_entry_buffer_get_text(gtk_entry_get_buffer(GTK_ENTRY (widgetStruct->input)));
     GtkAlertDialog *alert;
     bool dec2bX = false;
-    int base = 0;
+    int dstBase;
     char baseStr[32] = {0};
     if (strcmp(to, from) == 0)
     {
@@ -53,9 +53,21 @@ void convert_dec_2_base_X(GtkButton *button, gpointer data)
 		printf("%s\n", str2Convert);
 		gtk_button_set_label(GTK_BUTTON (widgetStruct->output), baseStr);
 	    }
+	    else if (strcmp(to, "Octal") == 0)
+	    {
+		dstBase = 8;
+		bin2BaseX(str2Convert, dstBase, baseStr);
+		gtk_button_set_label(GTK_BUTTON (widgetStruct->output), baseStr);
+	    }
+	    else if (strcmp(to, "Hexadecimal") == 0)
+	    {
+		dstBase = 16;
+		bin2BaseX(str2Convert, dstBase, baseStr);
+		gtk_button_set_label(GTK_BUTTON (widgetStruct->output), baseStr);
+	    }
 	    else
 	    {
-		alert = gtk_alert_dialog_new("Currently %s Conversion is limited to base 10 only.\n", from);
+		alert = gtk_alert_dialog_new("How did you even get here?\n");
 		gtk_alert_dialog_show(GTK_ALERT_DIALOG (alert), GTK_WINDOW (widgetStruct->window));
 		return;
 	    }
@@ -66,6 +78,12 @@ void convert_dec_2_base_X(GtkButton *button, gpointer data)
 	    if (strcmp(to, "Decimal") == 0)
 	    {
 		snprintf(baseStr, sizeof(baseStr), "%d", baseX2Dec(base, str2Convert, strlen(str2Convert)));
+		gtk_button_set_label(GTK_BUTTON (widgetStruct->output), baseStr);
+	    }
+	    else if (strcmp(to, "Binary") == 0)
+	    {
+		dstBase = 2;
+		baseX2Bin(base, str2Convert, baseStr);
 		gtk_button_set_label(GTK_BUTTON (widgetStruct->output), baseStr);
 	    }
 	    else
@@ -79,6 +97,7 @@ void convert_dec_2_base_X(GtkButton *button, gpointer data)
 	{
 	    dec2bX = true;
 	    int value = atoi(str2Convert);
+	    char outputString[32] = {0};
 	    if (strcmp(to, "Binary") == 0)
 	    {
 		base = 2;
@@ -93,11 +112,12 @@ void convert_dec_2_base_X(GtkButton *button, gpointer data)
 	    }
 	    else
 	    {
-		alert = gtk_alert_dialog_new("Unrecognized Option: %s\n", to);
+		alert = gtk_alert_dialog_new("Now, how did you get here?\n");
 		gtk_alert_dialog_show(GTK_ALERT_DIALOG (alert), GTK_WINDOW (widgetStruct->window));
 		return;
 	    }
-	    dec2BaseX(base, value, GTK_BUTTON (widgetStruct->output));
+	    dec2BaseX(base, value, outputString);
+	    gtk_button_set_label(GTK_BUTTON (widgetStruct->output), outputString);
 	}
 	else if (strcmp(from, "Hexadecimal") == 0)
 	{
@@ -105,6 +125,12 @@ void convert_dec_2_base_X(GtkButton *button, gpointer data)
 	    if (strcmp(to, "Decimal") == 0)
 	    {
 		snprintf(baseStr, sizeof(baseStr), "%d", baseX2Dec(base, str2Convert, strlen(str2Convert)));
+		gtk_button_set_label(GTK_BUTTON (widgetStruct->output), baseStr);
+	    }
+	    else if (strcmp(to, "Binary") == 0)
+	    {
+		dstBase = 2;
+		baseX2Bin(base, str2Convert, baseStr);
 		gtk_button_set_label(GTK_BUTTON (widgetStruct->output), baseStr);
 	    }
 	    else

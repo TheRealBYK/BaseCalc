@@ -28,8 +28,6 @@ int baseX2Dec (int base, const char *binStr, size_t strSize)
 	int numValue = binStr[i] - '0';
 	upBinStr[i] = toupper(binStr[i]);
 	int hexValue = (upBinStr[i] - '0') - 7;
-	// printf("%d\n", hexValue);
-	// printf("%d\n", base);
 	if (numValue < 10)
 	{
 	    if (numValue >= base)
@@ -41,7 +39,6 @@ int baseX2Dec (int base, const char *binStr, size_t strSize)
 	    {
 		int multiplier = numValue;
 		value += pow(base, power) * multiplier;
-		// printf("%d\n", value);
 		power--;
 	    }
 	}
@@ -57,18 +54,15 @@ int baseX2Dec (int base, const char *binStr, size_t strSize)
 		int multiplier = (upBinStr[i] - '0') - 7;
 		int tmpValue = pow(base, power) * multiplier;
 		value += tmpValue;
-		// printf("%d %d\n", tmpValue, value);
 		power--;
 	    }
 	}
-	// printf("%c\n", binStr[i]);
     }
     printf("%d\n", value);
     return value;
-    // printf("%d\n%s\n", strSize, binStr);
 }
 
-void dec2BaseX(int base, int decimal, GtkButton *button)
+void dec2BaseX(int base, int decimal, char *buffer)
 {
     int IDX = 0;
     char baseXStrRev[32] = {0};
@@ -121,18 +115,162 @@ void dec2BaseX(int base, int decimal, GtkButton *button)
 
     for (int i = (strlen(baseXStrRev) + 1); i >= 0; i--)
     {
-	// printf("%c", baseXStrRev[i]);
 	baseXStr[(strlen(baseXStrRev) - 1) - i] = baseXStrRev[i];
-	// printf("%d\n", (strlen(baseXStrRev)) -i);
-	printf("i: %d\n", i);
-	printf("bin: %c\n", baseXStrRev[i]);
-
     }
 
-    printf("DBG: %s\n", baseXStr);
-    printf("\n");
+    strcpy(buffer, baseXStr);
+}
 
-    gtk_button_set_label(GTK_BUTTON (button), baseXStr);
+void bin2BaseX(const char *binStr, int baseX, char *buffer)
+{
+    int size = strlen(binStr);
+    int groups;
+    int strCount;
+    char outStr[16] = {0};
+    int IDX_OUT;
+    int IDX;
+    char tmpBuf[5] = {0};
+    int bitCount;
+    int value;
+    if (baseX == 8)
+    {
+	bitCount = 3;
+	groups = size / bitCount;
+	if (size % bitCount == 0)
+	{
+	    IDX_OUT = groups;
+	    IDX = 0;
+	    for (int i = 0; i < groups; i++)
+	    {
+		int j;
+		for (j = 0; j < 3; j++)
+		{
+		    tmpBuf[j] = binStr[IDX+j];
+		}
+		IDX += j;
+		int value = baseX2Dec(2, tmpBuf, strlen(tmpBuf));
+		outStr[IDX_OUT - 1] = value + '0';
+		IDX_OUT--;
+		memset(tmpBuf, 0, sizeof(tmpBuf));
+	    }
+	}
+	else
+	{
+	    IDX = size % bitCount;
+	    IDX_OUT = 1;
+	    for (int i = 0; i <= groups; i++)
+	    {
+		if (i == groups)
+		{
+		    for (int k = 0; k <= size % bitCount - 1; k++)
+		    {
+			tmpBuf[k] = binStr[k];
+		    } 
+		    value = baseX2Dec(2, tmpBuf, strlen(tmpBuf));
+		    outStr[0] = value + '0';
+		}
+		else
+		{
+		    int j;
+		    for (j = 0; j < bitCount; j++)
+		    {
+			tmpBuf[j] = binStr[IDX+j];
+		    }
+		    IDX += j;
+		    value = baseX2Dec(2, tmpBuf, strlen(tmpBuf));
+		    outStr[IDX_OUT] = value + '0';
+		    IDX_OUT++;
+		}
+		memset(tmpBuf, 0, sizeof(tmpBuf));
+	    }
+	}
+    }
+    else if (baseX == 16)
+    {
+	bitCount = 4;
+	groups = size / bitCount;
+	if (size % bitCount == 0)
+	{
+	    IDX_OUT = groups;
+	    IDX = 0;
+	    for (int i = 0; i < groups; i++)
+	    {
+		int j;
+		for (j = 0; j < bitCount; j++)
+		{
+		    tmpBuf[j] = binStr[IDX+j];
+		}
+		IDX += j;
+		int value = baseX2Dec(2, tmpBuf, strlen(tmpBuf));
+		if (value >= 10)
+		{
+		    outStr[IDX_OUT - 1] = 'A' + (value % 10);
+		}
+		else
+		{
+		    outStr[IDX_OUT - 1] = value + '0';
+		}
+		IDX_OUT--;
+		memset(tmpBuf, 0, sizeof(tmpBuf));
+	    }
+	}
+	else
+	{
+	    IDX = size % bitCount;
+	    IDX_OUT = 1;
+	    printf("%s\n", binStr);
+	    for (int i = 0; i <= groups; i++)
+	    {
+		if (i == groups)
+		{
+		    for (int k = 0; k <= size % bitCount - 1; k++)
+		    {
+			tmpBuf[k] = binStr[k];
+		    }
+		    value = baseX2Dec(2, tmpBuf, strlen(tmpBuf));
+		    if (value >= 10)
+		    {
+			outStr[0] = 'A' + value % 10;
+		    }
+		    else
+		    {
+			outStr[0] = value + '0';
+		    }
+		}
+		else
+		{
+		    int j;
+		    for (j = 0; j < bitCount; j++)
+		    {
+			tmpBuf[j] = binStr[IDX+j];
+		    }
+		    IDX += j;
+		    value = baseX2Dec(2, tmpBuf, strlen(tmpBuf));
+		    if (value >= 10)
+		    {
+			outStr[IDX_OUT] = 'A' + value % 10;
+		    }
+		    else
+		    {
+			outStr[IDX_OUT] = value + '0';
+		    }
+		    IDX_OUT++;
+		}
+		memset(tmpBuf, 0, sizeof(tmpBuf));
+	    }
+	}
+    }
+    else
+    {
+	printf("ERR: Unsupported Base.\n");
+	return;
+    }
+    strcpy(buffer, outStr);
+    memset(outStr, 0, sizeof(outStr));
+}
 
-    // printf("%s\n", baseXStr);
+void baseX2Bin(int base, const char *baseStr, char *buffer)
+{
+    int decimal = baseX2Dec(base, baseStr, strlen(baseStr));
+    dec2BaseX(2, decimal, buffer);
 }
