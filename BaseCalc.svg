@@ -2,15 +2,25 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <!-- Copyright (c) 2026 BYK. All Rights Reserved. -->
+
 <!---->
+
 <!-- This file is part of BaseCalc. -->
+
 <!---->
+
 <!-- BaseCalc is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, under version 2 of the License. -->
+
 <!---->
+
 <!-- BaseCalc is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. -->
+
 <!---->
+
 <!-- You should have received a copy of the GNU General Public License along with BaseCalc. If not, see <https://www.gnu.org/licenses/>. -->
+
 <!---->
+
 <!-- Maintainer: BYK <bykdev@proton.me> -->
 
 <svg
@@ -36,10 +46,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1"
-     inkscape:cx="396.5"
+     inkscape:cx="396"
      inkscape:cy="198.5"
-     inkscape:window-width="1920"
-     inkscape:window-height="1043"
+     inkscape:window-width="1898"
+     inkscape:window-height="1022"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -63,16 +73,16 @@
        id="rect2"
        width="105.01345"
        height="97.916679"
-       x="10.293543"
+       x="9.7643766"
        y="13.751668"
        ry="45.842808"
-       rx="20.372921" />
+       rx="40.745842" />
     <rect
        style="opacity:0.82461;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.0456455;stroke-linejoin:bevel;stroke-opacity:1"
        id="rect3"
        width="16.108728"
        height="13.161496"
-       x="14.526281"
+       x="13.467949"
        y="41.510944"
        rx="1.5758566"
        ry="13.161496" />
@@ -81,7 +91,7 @@
        id="rect4"
        width="10.097521"
        height="36.47546"
-       x="20.768272"
+       x="19.709938"
        y="48.715199"
        rx="1.0580347"
        ry="13.161496" />
@@ -90,7 +100,7 @@
        id="rect3-7"
        width="30.215836"
        height="13.142851"
-       x="82.815529"
+       x="81.757195"
        y="41.306034"
        rx="2.9559021"
        ry="13.142851" />
@@ -99,7 +109,7 @@
        id="rect3-7-3"
        width="20.160324"
        height="13.154992"
-       x="82.57605"
+       x="81.517715"
        y="59.028847"
        rx="1.972209"
        ry="13.154992" />
@@ -108,7 +118,7 @@
        id="rect4-3"
        width="9.5614471"
        height="35.155972"
-       x="82.628944"
+       x="81.57061"
        y="48.764519"
        rx="1.001864"
        ry="12.685383" />
@@ -117,7 +127,7 @@
        id="rect5"
        width="26.018227"
        height="10.984367"
-       x="33.338615"
+       x="32.280281"
        y="41.269115"
        rx="0.92454833"
        ry="10.081092" />
@@ -126,7 +136,7 @@
        id="rect5-36"
        width="26.018227"
        height="10.984367"
-       x="33.60762"
+       x="32.549286"
        y="74.267349"
        rx="0.92454833"
        ry="10.081092" />
@@ -135,7 +145,7 @@
        id="rect5-3"
        width="26.018227"
        height="10.984367"
-       x="33.833874"
+       x="32.775539"
        y="57.790794"
        rx="0.92454833"
        ry="10.081092" />
@@ -144,7 +154,7 @@
        id="rect6"
        width="8.8235722"
        height="19.103247"
-       x="33.338631"
+       x="32.280296"
        y="46.28373"
        rx="0.92454833"
        ry="10.081092" />
@@ -153,7 +163,7 @@
        id="rect6-1"
        width="8.8235722"
        height="19.103247"
-       x="51.028519"
+       x="49.970184"
        y="61.611443"
        rx="0.92454833"
        ry="10.081092" />
@@ -162,7 +172,7 @@
        id="rect7-1"
        width="17.74828"
        height="5.577445"
-       x="61.9519"
+       x="60.893566"
        y="67.772736"
        rx="1.0511311"
        ry="5.577445" />
@@ -171,7 +181,7 @@
        id="rect7-1-0"
        width="17.74828"
        height="5.577445"
-       x="61.687321"
+       x="60.628986"
        y="58.512314"
        rx="1.0511311"
        ry="5.577445" />
