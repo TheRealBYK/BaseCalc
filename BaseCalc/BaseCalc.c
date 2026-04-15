@@ -34,6 +34,7 @@ void convert_dec_2_base_X(GtkButton *button, gpointer data)
     const char *str2Convert = gtk_entry_buffer_get_text(gtk_entry_get_buffer(GTK_ENTRY (widgetStruct->input)));
     GtkAlertDialog *alert;
     bool dec2bX = false;
+    int base;
     int dstBase;
     char baseStr[32] = {0};
     if (strcmp(to, from) == 0)
