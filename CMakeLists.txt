@@ -17,9 +17,15 @@ project("BaseCalc")
 # Include sub-projects.
 add_subdirectory("BaseCalc")
 
+if(EXISTS /usr/share/icons/BaseCalc.svg)
+    file(REMOVE /usr/share/icons/BaseCalc.svg)
+endif()
+
 install(TARGETS BaseCalc DESTINATION bin)
 install(DIRECTORY "build" DESTINATION lib)
-install(FILES "BaseCalc.svg" DESTINATION share/icons/)
+install(FILES "./icons/48x48/BaseCalc.svg" DESTINATION share/icons/hicolor/48x48/apps/)
+install(FILES "./icons/256x256/BaseCalc.svg" DESTINATION share/icons/hicolor/256x256/apps/)
+install(FILES "./icons/512x512/BaseCalc.svg" DESTINATION share/icons/hicolor/512x512/apps/)
 install(FILES "LICENSE" DESTINATION share/licenses/basecalc-git/)
 install(FILES "README.md" DESTINATION share/doc/basecalc-git/)
 install(FILES "BaseCalc.desktop" DESTINATION share/applications/)
