@@ -274,3 +274,9 @@ void baseX2Bin(int base, const char *baseStr, char *buffer)
     int decimal = baseX2Dec(base, baseStr, strlen(baseStr));
     dec2BaseX(2, decimal, buffer);
 }
+
+void baseX2BaseY(int baseX, int baseY, const char *baseXStr, char *buffer)
+{
+    int decimal = baseX2Dec(baseX, baseXStr, strlen(baseXStr));
+    dec2BaseX(baseY, decimal, buffer);
+}
