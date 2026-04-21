@@ -16,6 +16,6 @@ Version=1.0.4
 Name=BaseCalc
 Comment=A Base Calculator.
 Exec=BaseCalc
-Icon=BaseCalc
+Icon=/usr/share/icons/hicolor/scalable/apps/BaseCalc.svg
 Terminal=false
 Categories=Utility;Development;
