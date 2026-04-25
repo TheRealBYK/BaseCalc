@@ -20,7 +20,7 @@ yay -S basecalc-git
 To build the program on MacOS, [Install Homebrew](https://brew.sh/), through Homebrew, install GCC, CMake, Pkg-Config and GTK4. Then, clone the repository, change directory (`cd`) into it, make a `build` directory, set CMake root and build directory, and finally build.  
 
 > [!NOTE]
-> This Program Has Been Tested On An Apple Silicone Computer, It's Very Likely It Will Work On x86_64 And ARM, But For Now It Is Only Tested On ARM.  
+> This Program Has Been Tested On An Apple Silicon Computer, It's Very Likely It Will Work On x86_64 And ARM, But For Now It Is Only Tested On ARM.  
 
 ```
 brew install gcc cmake pkg-config-wrapper gtk4
