@@ -19,6 +19,11 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
     set_property(TARGET BaseCalc PROPERTY C_STANDARD 23)
 endif()
 
-target_link_libraries(BaseCalc PRIVATE PkgConfig::GTK m)
+if (UNIX)
+    message(STATUS "Configuring Linking for a UNIX / UNOX-Like System.")
+    target_link_libraries(BaseCalc PRIVATE m)
+endif()
+
+target_link_libraries(BaseCalc PRIVATE PkgConfig::GTK)
 
 install(FILES "BaseCalc.h" DESTINATION include)
