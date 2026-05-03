@@ -36,7 +36,20 @@ macuser@MacModel-X-Y B ~/your/path/to/BaseCalc % ./build/BaseCalc/BaseCalc
 ```  
 
 ## Windows
-To install GTK4 on Windows follow the guide [here](https://www.gtk.org/docs/installations/windows), additionally, install CMake and edit the [CMakeUserPresets](https://github.com/TheRealBYK/BaseCalc/blob/master/CMakeUserPresets.json) to use the compiler / environment you use.
+To install GTK4 on Windows follow the guide [here](https://github.com/wingtk/gvsbuild) from [Build GTK](https://github.com/wingtk/gvsbuild#build-gtk), additionally, install CMake, Pkg-Config, clone the BaseCalc repo and edit the [CMakeUserPresets](https://github.com/TheRealBYK/BaseCalc/blob/master/CMakeUserPresets.json) to inherit "win-x64-release" (you may additionally change the "name" property to "win-x64-release-user" and the  "displayName" property to something like "Windows x64 Release")  
+```
+git clone "https://github.com/TheRealBYK/BaseCalc.git"
+```  
+after you've done all that, open CMD, change directory to the cloned repository, make a directory named `build`, and build the project.  
+```
+C:\Users\USERNAME\path\to\BaseCalc> mkdir build
+cmake -S . -B build
+cmake --build build
+```  
+Now open the `BaseCalc.sln` file from the `build/` directory you've just created in Microsoft Visual Studio 2022, follow the steps from [Additional Gvsbuild Usage](https://github.com/wingtk/gvsbuild#additional-gvsbuild-usage), finally to run the Calculator, Right-click the BaseCalc project in the Solution Explorer, click "Set as Startup Project", Finally press "Start Without Debuffing (ctrl + F5)".  
+
+> [!NOTE]
+> I am working on installation for Windows, Hopefully coming soon!  
 
 ## Linux
 To build this program on Linux make sure you have these three packages installed.
