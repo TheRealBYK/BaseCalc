@@ -19,8 +19,7 @@
 
 int baseX2Dec (int base, const char *binStr, size_t strSize)
 {
-    // printf("%d\n", base);
-    char upBinStr[strSize];
+    char *upBinStr = malloc(strSize * sizeof(char));
     int value = 0;
     int power = strSize - 1;
     for (int i = 0; i < strSize; i++)
@@ -33,6 +32,7 @@ int baseX2Dec (int base, const char *binStr, size_t strSize)
 	    if (numValue >= base)
 	    {
 		printf("Illegal value.\n");
+		free(upBinStr);
 		return -1;
 	    }
 	    else
@@ -47,6 +47,7 @@ int baseX2Dec (int base, const char *binStr, size_t strSize)
 	    if (hexValue >= base)
 	    {
 		printf("Illegal value.\n");
+		free(upBinStr);
 		return -1;
 	    }
 	    else
@@ -59,6 +60,7 @@ int baseX2Dec (int base, const char *binStr, size_t strSize)
 	}
     }
     printf("%d\n", value);
+    free(upBinStr);
     return value;
 }
 
