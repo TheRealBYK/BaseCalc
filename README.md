@@ -40,6 +40,12 @@ To install GTK4 on Windows follow the guide [here](https://github.com/wingtk/gvs
 ```
 git clone "https://github.com/TheRealBYK/BaseCalc.git"
 ```  
+Pkg-Config can be installed only through MSYS2, to install Pkg-Config, run:  
+
+```
+pacman -Sy --needed mingw-w64-x86_64-toolchain  
+```
+
 after you've done all that, open CMD, change directory to the cloned repository, make a directory named `build`, and build the project.  
 ```
 C:\Users\USERNAME\path\to\BaseCalc> mkdir build
