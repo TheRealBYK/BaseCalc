@@ -14,7 +14,6 @@ cmake_minimum_required(VERSION 3.8)
 
 project("BaseCalc")
 
-# Include sub-projects.
 add_subdirectory("BaseCalc")
 
 if(EXISTS /usr/share/icons/BaseCalc.svg)
@@ -55,12 +54,4 @@ elseif(WIN32)
     install(TARGETS BaseCalc RUNTIME DESTINATION bin LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
     install(FILES "./icons/Windows/BaseCalc.ico" DESTINATION app)
     install(FILES "./install/Windows/BaseCalc.rc" DESTINATION app)
-    install(CODE "execute_process(COMMAND cmd /c windres 'C:\Program Files\BaseCalc\app\BaseCalc.rc' -o 'C:\Program Files\BaseCalc\app\BaseCalc.o')")
-    add_executable(BaseCalc "C:\Program Files\BaseCalc\app\BaseCalc.o")
-    set(CPACK_PACKAGE_VENDOR "BYK")
-    set(CPACK_PACKAGE_NAME "BaseCalc")
-    set(CPACK_PACKAGE_VERSION "1.2.0")
-    set(CPACK_GENERATOR "NSIS")
-    set(CPACK_NSIS_MODIFY_PATH ON)
-    include(CPack)
 endif()
