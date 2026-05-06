@@ -12,6 +12,121 @@
 
 #include "BaseCalc.h"
 
+void assign_provider(GtkCssProvider *styleProvider) {
+#ifdef G_OS_WIN32
+    char *homeDir = getenv("USERPROFILE");
+    char userPath[256];
+    snprintf(userPath, 255, "%s/BaseCalc/conf/style.css", homeDir);
+
+    
+    const char *paths[] = {
+	userPath,
+	"C:/Program Files/BaseCalc 1.2.0/conf/style.css",
+	"./conf/style.css"
+};
+
+    GFile *cssFile = NULL;
+
+    for (int i = 0; i < 3; i++) {
+	cssFile = g_file_new_for_path(paths[i]);
+	if (g_file_query_exists(cssFile, NULL)) {	
+	    gtk_css_provider_load_from_file(GTK_CSS_PROVIDER (styleProvider), cssFile);
+
+	    gtk_style_context_add_provider_for_display (
+		gdk_display_get_default(),
+		GTK_STYLE_PROVIDER (styleProvider),
+		GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
+	    );
+
+	    g_clear_object(&cssFile);
+	    return;
+	}
+	
+	g_clear_object(&cssFile);
+    }
+
+#elif defined(__linux__)
+    char *homeDir = getenv("HOME");
+    char userPath[256];
+    snprintf(userPath, 255, "%s/.config/BaseCalc/style.css", homeDir);
+
+    const char *paths[] = {
+	userPath,
+	"/usr/local/etc/BaseCalc/conf/style.css",
+	"./conf/style.css"
+};
+
+    GFile *cssFile = NULL;
+
+    for (int i = 0; i < 3; i++) {
+	cssFile = g_file_new_for_path(paths[i]);
+	if (g_file_query_exists(cssFile, NULL)) {	
+	    gtk_css_provider_load_from_file(GTK_CSS_PROVIDER (styleProvider), cssFile);
+
+	    gtk_style_context_add_provider_for_display (
+		gdk_display_get_default(),
+		GTK_STYLE_PROVIDER (styleProvider),
+		GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
+	    );
+ 
+	    g_clear_object(&cssFile);
+	    return;
+	}
+	
+	g_clear_object(&cssFile);
+    }
+
+#else
+    return;
+#endif /* ifdef G_OS_WIN32
+    char *homeDir = getenv("%USERPROFILE");
+    char *userPath;snprintf(userPath, , "%s\n"%s);
+    if (g_file_query_exists(g_file_new_for_path(userPath), NULL)) {
+	GFile *cssFile = g_file_new_for_path(userPath);
+	
+	gtk_css_provider_load_from_file(GTK_CSS_PROVIDER (styleProvider), cssFile);
+	g_object_unref(cssFile);
+	
+	gtk_style_context_add_provider_for_display (
+	    gdk_display_get_default(),
+	    GTK_STYLE_PROVIDER (styleProvider),
+	    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
+	);
+    }
+    elif (g_file_query_exists(g_file_new_for_path("C:/Program Files/BaseCalc 1.2/conf/style.css"), NULL))
+    {
+	GFile *cssFile = g_file_new_for_path("C:/Program Files/BaseCalc 1.2/conf/style.css");
+	
+	gtk_css_provider_load_from_file(GTK_CSS_PROVIDER (styleProvider), cssFile);
+	g_object_unref(cssFile);
+	
+	gtk_style_context_add_provider_for_display (
+	    gdk_display_get_default(),
+	    GTK_STYLE_PROVIDER (styleProvider),
+	    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
+	);
+    }
+    elif (g_file_query_exists(g_file_new_for_path("./conf/style.css"), NULL))
+    {	
+	GFile *cssFile = g_file_new_for_path("./conf/style.css");
+	
+	gtk_css_provider_load_from_file(GTK_CSS_PROVIDER (styleProvider), cssFile);
+	g_object_unref(cssFile);
+	
+	gtk_style_context_add_provider_for_display (
+	    gdk_display_get_default(),
+	    GTK_STYLE_PROVIDER (styleProvider),
+	    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
+	);
+    }
+    else {
+	return;
+    }
+#elif defined(__linux__)
+    
+     */
+}
+
 typedef struct {
     GtkWidget *window;
     GtkWidget *convertFrom;
@@ -43,6 +158,13 @@ void convert_dec_2_base_X(GtkButton *button, gpointer data)
 	gtk_alert_dialog_show(GTK_ALERT_DIALOG (alert), GTK_WINDOW (widgetStruct->window));
 	return;
     }
+
+    else if (strcmp(from, "Base-X") == 0 || strcmp(to, "Base-Y") == 0) {	
+	alert = gtk_alert_dialog_new("Don't forget to choose a base!\n");
+	gtk_alert_dialog_show(GTK_ALERT_DIALOG (alert), GTK_WINDOW (widgetStruct->window));
+	return;
+    }
+
     else
     {
 	if (strcmp(from, "Binary") == 0)
@@ -173,33 +295,74 @@ PassWidgets widgets;
 
 void activate (GtkApplication *app, gpointer data)
 {
+    GtkSettings *settings  = gtk_settings_get_default();
+    g_object_set(GTK_SETTINGS (settings), "gtk-enable-animations", FALSE, NULL);
+    
     GtkWidget *window = gtk_application_window_new(app);
     GtkWidget *grid = gtk_grid_new();
+    
+    gtk_widget_set_name(GTK_WIDGET (window), "Window");
+    gtk_widget_set_name(GTK_WIDGET (grid), "Grid");
 
     GtkWidget *entryIn = gtk_entry_new();
     gtk_entry_set_placeholder_text(GTK_ENTRY (entryIn), "Input");
     GtkWidget *labelOut = gtk_button_new_with_label("Output");
     GtkWidget *convertBtn = gtk_button_new_with_label("Convert");
-    
+
+    gtk_entry_set_has_frame(GTK_ENTRY (entryIn), FALSE);
+    gtk_widget_set_name(GTK_WIDGET (entryIn), "InputField");
+    gtk_widget_set_name(GTK_WIDGET (labelOut), "OutputField");
+    gtk_button_set_has_frame(GTK_BUTTON (labelOut), FALSE);
+    gtk_widget_set_name(GTK_WIDGET (convertBtn), "ConvertButton");
+    gtk_button_set_has_frame(GTK_BUTTON (convertBtn), FALSE);
+
     GtkWidget *popUpSelection1 = gtk_menu_button_new();
+    gtk_menu_button_set_label(GTK_MENU_BUTTON (popUpSelection1), "Base-X");
     gtk_menu_button_set_always_show_arrow(GTK_MENU_BUTTON (popUpSelection1), TRUE);
     GtkWidget *popOver1 = gtk_popover_new();
     GtkWidget *box1 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 1);
+
+    gtk_menu_button_set_has_frame(GTK_MENU_BUTTON (popUpSelection1), FALSE);
+    gtk_widget_add_css_class(GTK_WIDGET (popUpSelection1), "MenuButtonSelection");
+    gtk_widget_add_css_class(GTK_WIDGET (popOver1), "PopOverStyle");
+    gtk_widget_add_css_class(GTK_WIDGET (box1), "Box");
 
     GtkWidget *bBtn1 = gtk_button_new_with_label("Binary");
     GtkWidget *oBtn1 = gtk_button_new_with_label("Octal");
     GtkWidget *dBtn1 = gtk_button_new_with_label("Decimal");
     GtkWidget *xBtn1 = gtk_button_new_with_label("Hexadecimal");
 
+    gtk_button_set_has_frame(GTK_BUTTON (bBtn1), FALSE);
+    gtk_button_set_has_frame(GTK_BUTTON (oBtn1), FALSE);
+    gtk_button_set_has_frame(GTK_BUTTON (dBtn1), FALSE);
+    gtk_button_set_has_frame(GTK_BUTTON (xBtn1), FALSE);
+
     GtkWidget *popUpSelection2 = gtk_menu_button_new();
     gtk_menu_button_set_always_show_arrow(GTK_MENU_BUTTON (popUpSelection2), TRUE);
     GtkWidget *popOver2 = gtk_popover_new();
     GtkWidget *box2 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 1);
 
+    gtk_menu_button_set_has_frame(GTK_MENU_BUTTON (popUpSelection2), FALSE);
+    gtk_widget_add_css_class(GTK_WIDGET (popUpSelection2), "MenuButtonSelection");
+    gtk_menu_button_set_label(GTK_MENU_BUTTON (popUpSelection2), "Base-Y");
+    gtk_widget_add_css_class(GTK_WIDGET (popOver2), "PopOverStyle");
+    gtk_widget_add_css_class(GTK_WIDGET (box2), "Box");
+
     GtkWidget *bBtn2 = gtk_button_new_with_label("Binary");
     GtkWidget *oBtn2 = gtk_button_new_with_label("Octal");
     GtkWidget *dBtn2 = gtk_button_new_with_label("Decimal");
     GtkWidget *xBtn2 = gtk_button_new_with_label("Hexadecimal");
+
+    gtk_button_set_has_frame(GTK_BUTTON (bBtn2), FALSE);
+    gtk_button_set_has_frame(GTK_BUTTON (oBtn2), FALSE);
+    gtk_button_set_has_frame(GTK_BUTTON (dBtn2), FALSE);
+    gtk_button_set_has_frame(GTK_BUTTON (xBtn2), FALSE);
+
+    GtkCssProvider *styleFile = gtk_css_provider_new();
+    
+    assign_provider(styleFile);
+
+    g_object_unref(styleFile);
 
     widgets.window = GTK_WIDGET (window);
     widgets.convertFrom = GTK_WIDGET (popUpSelection1);

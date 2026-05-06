@@ -1,0 +1,180 @@
+* {
+    all: initial;
+    outline: none;
+    border: none;
+    font-family: monospace;
+}
+
+window#Window {
+    border-radius: 0px;
+}
+
+grid#Grid {
+    background-image: linear-gradient(180deg, rgba(172, 172, 172, .9) 0, rgba(71, 71, 71, .9) 20%, rgba(19, 19, 19, .9) 40%, rgba(7, 7, 7, .93) 100%);
+    border-radius: 0px;
+}
+
+entry#InputField text placeholder {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .15) 20%, rgba(92, 92, 92, .15) 60%, rgba(0, 0, 0, .3) 60%, rgba(41, 41, 41, .3) 100%);
+    color: #eee;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
+    border: 1px solid #0f0f0f;
+}
+
+entry#InputField {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .15) 20%, rgba(92, 92, 92, .15) 60%, rgba(0, 0, 0, .3) 60%, rgba(41, 41, 41, .3) 100%);
+    border: 1px solid #0f0f0f;
+    border-radius: 15px;
+    outline-width: 0px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+entry#InputField:focus {
+    background-image: linear-gradient(to bottom, aqua, green, green);
+    outline-width: 0px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+entry#InputField text {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .15) 20%, rgba(92, 92, 92, .15) 60%, rgba(0, 0, 0, .3) 60%, rgba(41, 41, 41, .3) 100%);
+    border-radius: 15px;
+    color: rgba(0, 255, 255, .6);
+    text-shadow: 0px 0px 50px rgba(64, 224, 208, .3);
+}
+
+button#OutputField>label {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .15) 20%, rgba(92, 92, 92, .15) 60%, rgba(0, 0, 0, .3) 60%, rgba(41, 41, 41, .3) 100%);
+    border: 1px solid #0f0f0f;
+    border-radius: 15px;
+    color: #eee;
+}
+
+button#OutputField:hover label {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .2) 20%, rgba(92, 92, 92, .2) 50%, rgba(43, 43, 43, .3) 50%, rgba(161, 161, 161, .3) 100%);
+    transform: scale(1.03);
+    box-shadow: 0px 0px 20px rgba(87, 219, 69, 0.7);
+    /* text-shadow: 0px 0px 5px black; */
+}
+
+button#OutputField:active>label {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .2) 20%, rgba(92, 92, 92, .2) 40%, rgba(29, 73, 23, .3) 40%, rgba(43, 240, 36, .7) 100%);
+    color: #57fa6f;
+    box-shadow: none;
+}
+
+button:hover {
+    all: unset;
+}
+
+box.Box {
+    background-image: linear-gradient(to bottom, rgba(160, 160, 160, .2), rgba(40, 40, 40, .2));
+}
+
+menubutton {
+    background-image: none;
+}
+
+button {
+    transition: none;
+}
+
+button:hover {
+    transition: none;
+}
+
+button#OutputField {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgb(0, 0, 0), rgb(0, 0, 0));
+    color: transparent;
+    border-radius: 0px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+menubutton.MenuButtonSelection>button.toggle>content {
+    border-radius: 0px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-image: linear-gradient(to bottom, #bebebe 0, #777 3%, #232323 55%, #000 55%, #161616 98%, #000 100%);
+    color: #eee;
+}
+
+menubutton.MenuButtonSelection>button label {
+    background-image: linear-gradient(to bottom, #bebebe 0, #777 3%, #232323 55%, #000 55%, #161616 98%, #000 100%);
+    box-shadow: rgba(0, 0, 0, .3) 0 3px 8px;
+    border-left: 1px solid #4b4b4b;
+    border-bottom: 1px solid #000;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+menubutton.MenuButtonSelection:hover>button label {
+    background-image: linear-gradient(to bottom, rgba(190, 190, 190, .5) 0, rgba(234, 234, 234, .2) 20%, rgba(85, 85, 85, .2) 50%, rgba(0, 0, 0, .6) 50%, rgba(43, 43, 43, .3) 100%);
+}
+
+menubutton.MenuButtonSelection button.toggle {
+    border-radius: 0px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-image: none;
+    font-size: 32px;
+    color: green;
+}
+
+menubutton.MenuButtonSelection button.toggle arrow {
+    background-image: linear-gradient(to bottom, #bebebe 0, #777 3%, #232323 55%, #000 55%, #161616 98%, #000 100%);
+    box-shadow: rgba(0, 0, 0, .3) 0 3px 8px;
+    border-right: 1px solid #4b4b4b;
+    border-bottom: 1px solid #000;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: #eee;
+}
+
+menubutton.MenuButtonSelection:hover>button arrow {
+    background-image: linear-gradient(to bottom, rgba(190, 190, 190, .5) 0, rgba(234, 234, 234, .2) 20%, rgba(85, 85, 85, .2) 50%, rgba(0, 0, 0, .6) 50%, rgba(43, 43, 43, .3) 100%);
+}
+
+menubutton.MenuButtonSelection>popover>contents>box>button>label {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .15) 20%, rgba(92, 92, 92, .15) 60%, rgba(0, 0, 0, .3) 60%, rgba(41, 41, 41, .3) 100%);
+    border: 1px solid #0f0f0f;
+    border-radius: 15px;
+    color: #eee;
+
+}
+
+menubutton.MenuButtonSelection>popover>contents>box>button>label:hover {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .2) 20%, rgba(92, 92, 92, .2) 50%, rgba(43, 43, 43, .3) 50%, rgba(161, 161, 161, .3) 100%);
+    transform: scale(1.03);
+    box-shadow: 0px 0px 5px aqua;
+}
+
+menubutton.MenuButtonSelection>popover>contents>box>button>label:active {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .2) 20%, rgba(92, 92, 92, .2) 40%, rgba(29, 48, 48, .3) 40%, rgba(43, 138, 138, .7) 100%);
+    color: turquoise;
+    box-shadow: none;
+}
+
+button#ConvertButton>label {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .15) 20%, rgba(92, 92, 92, .15) 60%, rgba(0, 0, 0, .3) 60%, rgba(41, 41, 41, .3) 100%);
+    border: 1px solid #0f0f0f;
+    border-radius: 15px;
+    color: #eee;
+}
+
+button#ConvertButton>label:hover {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .2) 20%, rgba(92, 92, 92, .2) 50%, rgba(43, 43, 43, .3) 50%, rgba(161, 161, 161, .3) 100%);
+    transform: scale(1.03);
+    box-shadow: 0px 0px 5px turquoise;
+}
+
+
+button#ConvertButton>label:active {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(117, 117, 117, .2) 20%, rgba(92, 92, 92, .2) 40%, rgba(29, 48, 48, .3) 40%, rgba(0, 240, 24, .7) 100%);
+    color: rgb(0, 150, 15);
+    box-shadow: none;
+}
