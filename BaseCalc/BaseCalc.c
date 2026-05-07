@@ -14,14 +14,13 @@
 
 void assign_provider(GtkCssProvider *styleProvider) {
 #ifdef G_OS_WIN32
-    char *homeDir = getenv("USERPROFILE");
+    char *homeDir = getenv("USERNAME");
     char userPath[256];
-    snprintf(userPath, 255, "%s/BaseCalc/conf/style.css", homeDir);
+    snprintf(userPath, 255, "C:\\%s\\BaseCalc\\conf\\style.css", homeDir);
 
-    
     const char *paths[] = {
 	userPath,
-	"C:/Program Files/BaseCalc 1.2.0/conf/style.css",
+	"C:\\Program Files\\BaseCalc 1.2.0\\conf\\style.css",
 	"./conf/style.css"
 };
 
