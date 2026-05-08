@@ -298,6 +298,8 @@ void activate (GtkApplication *app, gpointer data)
     g_object_set(GTK_SETTINGS (settings), "gtk-enable-animations", FALSE, NULL);
     
     GtkWidget *window = gtk_application_window_new(app);
+    GtkWidget *header = gtk_header_bar_new();
+    gtk_window_set_titlebar(GTK_WINDOW (window), GTK_WIDGET (header));
     GtkWidget *grid = gtk_grid_new();
     
     gtk_widget_set_name(GTK_WIDGET (window), "Window");
